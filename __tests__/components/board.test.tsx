@@ -6,6 +6,6 @@ describe("Board", () => {
     const { container } = render(<Board />);
     const cellElements = container.querySelectorAll(".cell");
 
-    expect(cellElements.length).toEqual(16);
+    expect(cellElements.length).toEqual(15);
   });
 });

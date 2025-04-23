@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "@/styles/board.module.css";
-import { nanoid } from "nanoid";
+import { v4 as uuidv4 } from "uuid";
 import Tile from "./tile";
 
 const Board: React.FC = (): React.ReactNode => {
@@ -10,11 +10,9 @@ const Board: React.FC = (): React.ReactNode => {
         <Tile />
       </div>
       <div className={styles.grid}>
-        {Array.from({ length: 4 }).map(() => {
-          return Array.from({ length: 4 }).map(() => (
-            <div key={nanoid()} className={styles.cell}></div>
-          ));
-        })}
+        {Array.from({ length: 16 }).map(() => (
+          <div key={uuidv4()} className={styles.cell}></div>
+        ))}
       </div>
     </div>
   );
